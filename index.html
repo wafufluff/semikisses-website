@@ -7,8 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
-html {
-  overflow-y: scroll;
+/* Desktop only overflow */
+@media (min-width: 769px) {
+  html {
+    overflow-y: scroll;
+  }
 }
 
 body {
@@ -358,31 +361,63 @@ body {
     width: 100%;
 }
 
-@media (max-width: 480px) {
-    .shopgrid {
-        grid-template-columns: 1fr;
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 14px; /* smaller base font */
     }
+
+    .profilepic {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profilename {
+        font-size: 1.2rem;
+    }
+
+    .email {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .shopgrid {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .shopitem {
+        padding: 6px;
+        gap: 6px;
+    }
+
+    .shopitem .thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+
     .pagelayoutbox {
         flex-direction: column;
     }
+
     .aboutbox {
         width: 100%;
         align-self: stretch;
         flex: 1 1 100%;
-        position: static;
-        order: -1;
-        box-sizing: border-box;
         margin: 0;
+        order: -1;
     }
+
     .contentbox {
         flex: 1 1 100%;
         min-height: auto;
     }
+
     .aboutme, .contenttext {
         max-width: 100%;
     }
 }
-
 </style>
 </head>
 <body>
@@ -500,10 +535,10 @@ body {
         <div class="price">300 PHP</div>
     </div>
     </a>
+
 </div>
-            </div>
-        </div>
     </div>
+</div>
 </div>
 </body>
 </html>
